@@ -1,14 +1,21 @@
-
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
-const ContactInfo = ({ icon, title, content }: { icon: string; title: string; content: string }) => {
+const ContactInfo = ({
+  icon,
+  title,
+  content,
+}: {
+  icon: string;
+  title: string;
+  content: string;
+}) => {
   return (
     <div className="flex gap-3">
       <Icon name={icon} className="text-[#9b87f5] w-6 h-6 flex-shrink-0" />
       <div>
-        <h4 className="font-medium">{title}</h4>
-        <p className="text-gray-400">{content}</p>
+        <h4 className="font-medium text-white">{title}</h4>
+        <p className="text-gray-200">{content}</p>
       </div>
     </div>
   );
@@ -16,27 +23,37 @@ const ContactInfo = ({ icon, title, content }: { icon: string; title: string; co
 
 const ContactSection = () => {
   const contactDetails = [
-    { icon: "MapPin", title: "Адрес", content: "ул. Киберспортивная, 42, г. Москва" },
+    {
+      icon: "MapPin",
+      title: "Адрес",
+      content: "ул. Киберспортивная, 42, г. Москва",
+    },
     { icon: "Phone", title: "Телефон", content: "+7 (999) 123-45-67" },
     { icon: "Mail", title: "Email", content: "info@cyberarena.ru" },
-    { icon: "Clock", title: "Режим работы", content: "Круглосуточно, 7 дней в неделю" }
+    {
+      icon: "Clock",
+      title: "Режим работы",
+      content: "Круглосуточно, 7 дней в неделю",
+    },
   ];
 
   return (
     <section id="contact" className="py-16 px-4 md:px-8 bg-[#15191f]">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Контакты</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          Контакты
+        </h2>
+        <p className="text-gray-200 max-w-2xl mx-auto">
           Свяжитесь с нами для бронирования или вопросов
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
         <div>
-          <h3 className="text-xl font-bold mb-6">Информация</h3>
+          <h3 className="text-xl font-bold mb-6 text-white">Информация</h3>
           <div className="space-y-6">
             {contactDetails.map((item, index) => (
-              <ContactInfo 
+              <ContactInfo
                 key={index}
                 icon={item.icon}
                 title={item.title}
@@ -47,27 +64,27 @@ const ContactSection = () => {
         </div>
 
         <div>
-          <h3 className="text-xl font-bold mb-6">Написать нам</h3>
+          <h3 className="text-xl font-bold mb-6 text-white">Написать нам</h3>
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm mb-1">Имя</label>
-                <input 
-                  type="text" 
+                <label className="block text-sm mb-1 text-white">Имя</label>
+                <input
+                  type="text"
                   className="w-full p-2 rounded bg-[#1A1F2C] border border-[#2A2F3C] focus:outline-none focus:border-[#9b87f5]"
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">Email</label>
-                <input 
-                  type="email" 
+                <label className="block text-sm mb-1 text-white">Email</label>
+                <input
+                  type="email"
                   className="w-full p-2 rounded bg-[#1A1F2C] border border-[#2A2F3C] focus:outline-none focus:border-[#9b87f5]"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm mb-1">Сообщение</label>
-              <textarea 
+              <label className="block text-sm mb-1 text-white">Сообщение</label>
+              <textarea
                 rows={4}
                 className="w-full p-2 rounded bg-[#1A1F2C] border border-[#2A2F3C] focus:outline-none focus:border-[#9b87f5]"
               ></textarea>

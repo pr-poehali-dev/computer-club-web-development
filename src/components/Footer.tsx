@@ -1,4 +1,3 @@
-
 import Icon from "@/components/ui/icon";
 
 interface FooterLinkProps {
@@ -8,12 +7,14 @@ interface FooterLinkProps {
 
 const FooterLink = ({ href, text }: FooterLinkProps) => (
   <li>
-    <a href={href} className="text-gray-400 hover:text-[#9b87f5]">{text}</a>
+    <a href={href} className="text-gray-200 hover:text-[#9b87f5]">
+      {text}
+    </a>
   </li>
 );
 
 const SocialIcon = ({ name }: { name: string }) => (
-  <a href="#" className="text-gray-400 hover:text-[#9b87f5]">
+  <a href="#" className="text-gray-200 hover:text-[#9b87f5]">
     <Icon name={name} className="w-6 h-6" />
   </a>
 );
@@ -23,14 +24,14 @@ const Footer = () => {
     { href: "#features", text: "Преимущества" },
     { href: "#pricing", text: "Тарифы" },
     { href: "#equipment", text: "Оборудование" },
-    { href: "#gallery", text: "Галерея" }
+    { href: "#gallery", text: "Галерея" },
   ];
 
   const serviceLinks = [
     { href: "#", text: "Игровые зоны" },
     { href: "#", text: "VIP-комнаты" },
     { href: "#", text: "Организация турниров" },
-    { href: "#", text: "День рождения" }
+    { href: "#", text: "День рождения" },
   ];
 
   const socialIcons = ["Instagram", "Facebook", "Twitter", "Youtube"];
@@ -41,14 +42,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-[#9b87f5] font-bold text-xl">CyberArena</span>
+              <span className="text-[#9b87f5] font-bold text-xl">
+                CyberArena
+              </span>
             </div>
-            <p className="text-gray-400 text-sm">
-              Лучший компьютерный клуб в городе с новейшим оборудованием и комфортной атмосферой.
+            <p className="text-gray-200 text-sm">
+              Лучший компьютерный клуб в городе с новейшим оборудованием и
+              комфортной атмосферой.
             </p>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Разделы</h4>
+            <h4 className="font-bold mb-4 text-white">Разделы</h4>
             <ul className="space-y-2">
               {navLinks.map((link, index) => (
                 <FooterLink key={index} href={link.href} text={link.text} />
@@ -56,7 +60,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Услуги</h4>
+            <h4 className="font-bold mb-4 text-white">Услуги</h4>
             <ul className="space-y-2">
               {serviceLinks.map((link, index) => (
                 <FooterLink key={index} href={link.href} text={link.text} />
@@ -64,7 +68,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Соцсети</h4>
+            <h4 className="font-bold mb-4 text-white">Соцсети</h4>
             <div className="flex gap-4">
               {socialIcons.map((icon, index) => (
                 <SocialIcon key={index} name={icon} />
@@ -72,7 +76,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-[#2A2F3C] mt-8 pt-8 text-center text-sm text-gray-500">
+        <div className="border-t border-[#2A2F3C] mt-8 pt-8 text-center text-sm text-gray-300">
           © 2025 CyberArena. Все права защищены.
         </div>
       </div>
